@@ -1,0 +1,946 @@
+{
+  "Description": "creates the Glue workflow, Crawlers, Jobs and triggers",
+  "Parameters": {
+    "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43\""
+    },
+    "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3VersionKey1604AC59": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43\""
+    },
+    "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43ArtifactHash9FF31A32": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43\""
+    },
+    "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3BucketFA0A5440": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7\""
+    },
+    "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3VersionKey2A973290": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7\""
+    },
+    "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7ArtifactHash38763EDD": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7\""
+    },
+    "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3Bucket3112DCB2": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c\""
+    },
+    "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3VersionKey23B74560": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c\""
+    },
+    "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cArtifactHash433D4A98": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c\""
+    }
+  },
+  "Resources": {
+    "glueworkflowdb61A1F70D": {
+      "Type": "AWS::Glue::Database",
+      "Properties": {
+        "CatalogId": {
+          "Ref": "AWS::AccountId"
+        },
+        "DatabaseInput": {
+          "Name": "glue-workflow-db"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-workflow-db/Resource"
+      }
+    },
+    "gluecrawlerroleB13EEB29": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "glue.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "Description": "Assigns the managed policy AWSGlueServiceRole to AWS Glue Crawler so it can crawl S3 buckets",
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
+        ],
+        "RoleName": "AWSGlueServiceRole-AccessS3Bucket"
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-crawler-role/Resource"
+      }
+    },
+    "iampolicyforAssets6FCB9810": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListBucket"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:aws:s3:::",
+                    {
+                      "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": "s3:GetObject",
+              "Effect": "Allow",
+              "Resource": [
+                "arn:aws:s3:::covid19-lake/*",
+                "arn:aws:s3:::greenwichhr-covidjobimpacts/*"
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "glue-policy-workflowAssetAccess",
+        "Roles": [
+          {
+            "Ref": "gluecrawlerroleB13EEB29"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/iam-policy-forAssets/Resource"
+      }
+    },
+    "gluecrawlers3": {
+      "Type": "AWS::Glue::Crawler",
+      "Properties": {
+        "Role": {
+          "Ref": "gluecrawlerroleB13EEB29"
+        },
+        "Targets": {
+          "S3Targets": [
+            {
+              "Path": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "s3://",
+                    {
+                      "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                    },
+                    "/raw/"
+                  ]
+                ]
+              }
+            },
+            {
+              "Path": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "s3://",
+                    {
+                      "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                    },
+                    "/processed/"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "DatabaseName": {
+          "Ref": "glueworkflowdb61A1F70D"
+        },
+        "Name": "s3-csv-crawler",
+        "SchemaChangePolicy": {
+          "DeleteBehavior": "DEPRECATE_IN_DATABASE",
+          "UpdateBehavior": "UPDATE_IN_DATABASE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-crawler-s3"
+      }
+    },
+    "gluecrawlers3parquet": {
+      "Type": "AWS::Glue::Crawler",
+      "Properties": {
+        "Role": {
+          "Ref": "gluecrawlerroleB13EEB29"
+        },
+        "Targets": {
+          "S3Targets": [
+            {
+              "Path": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "s3://",
+                    {
+                      "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                    },
+                    "/processed-data/"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "DatabaseName": {
+          "Ref": "glueworkflowdb61A1F70D"
+        },
+        "Name": "s3-parquet-crawler",
+        "SchemaChangePolicy": {
+          "DeleteBehavior": "DEPRECATE_IN_DATABASE",
+          "UpdateBehavior": "UPDATE_IN_DATABASE"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-crawler-s3-parquet"
+      }
+    },
+    "rddlpajobmartrawworkflow": {
+      "Type": "AWS::Glue::Workflow",
+      "Properties": {
+        "Description": "ETL workflow to convert CSV to parquet and then load into Redshift",
+        "Name": "glue-workflow"
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/rd-dl-pa-jobmart-raw-workflow"
+      }
+    },
+    "gluejobasset": {
+      "Type": "AWS::Glue::Job",
+      "Properties": {
+        "Command": {
+          "Name": "glueetl",
+          "PythonVersion": "3",
+          "ScriptLocation": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                },
+                "/",
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3VersionKey1604AC59"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3VersionKey1604AC59"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "gluecrawlerroleB13EEB29",
+            "Arn"
+          ]
+        },
+        "DefaultArguments": {
+          "--TempDir": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                },
+                "/output/temp/"
+              ]
+            ]
+          },
+          "--job-bookmark-option": "job-bookmark-disable",
+          "--job-language": "python",
+          "--spark-event-logs-path": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                },
+                "/output/logs/"
+              ]
+            ]
+          },
+          "--enable-metrics": "",
+          "--enable-continuous-cloudwatch-log": "true",
+          "--source_BucketName": {
+            "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+          },
+          "--target_BucketName": {
+            "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+          },
+          "--target_covidPrefix": "raw/",
+          "--target_hiringPrefix": "processed/",
+          "--covid_source_bucket": "covid19-lake",
+          "--obj_covid_source_key": "rearc-covid-19-world-cases-deaths-testing/csv/covid-19-world-cases-deaths-testing.csv",
+          "--obj_covid_target_key": "raw/covid_cases.csv",
+          "--hiring_source_bucket": "greenwichhr-covidjobimpacts",
+          "--obj_hiring_source_key": "overall.csv.part_00000",
+          "--obj_hiring_target_key": "processed/covid_hiring.csv",
+          "--obj_1_source_key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3VersionKey1604AC59"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3VersionKey1604AC59"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "--obj_1_target_key": "scripts/glue-cdk-asset-etl.py",
+          "--obj_2_source_key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3VersionKey2A973290"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3VersionKey2A973290"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "--obj_2_target_key": "scripts/glue-parquet-etl.py",
+          "--obj_3_source_key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3VersionKey23B74560"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3VersionKey23B74560"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "--obj_3_target_key": "scripts/redshift-load-etl.py"
+        },
+        "Description": "Copy CDK assets to scripts folder and give meaningful name",
+        "ExecutionProperty": {
+          "MaxConcurrentRuns": 1
+        },
+        "GlueVersion": "3.0",
+        "MaxRetries": 2,
+        "Name": "glue-workflow-assetjob",
+        "NumberOfWorkers": 10,
+        "Timeout": 60,
+        "WorkerType": "G.1X"
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-job-asset"
+      }
+    },
+    "gluejobparquet": {
+      "Type": "AWS::Glue::Job",
+      "Properties": {
+        "Command": {
+          "Name": "glueetl",
+          "PythonVersion": "3",
+          "ScriptLocation": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3BucketFA0A5440"
+                },
+                "/scripts/glue-parquet-etl.py"
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "gluecrawlerroleB13EEB29",
+            "Arn"
+          ]
+        },
+        "DefaultArguments": {
+          "--TempDir": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                },
+                "/output/temp/"
+              ]
+            ]
+          },
+          "--job-bookmark-option": "job-bookmark-disable",
+          "--job-language": "python",
+          "--spark-event-logs-path": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                },
+                "/output/logs/"
+              ]
+            ]
+          },
+          "--enable-metrics": "",
+          "--enable-continuous-cloudwatch-log": "true",
+          "--glue_database_name": {
+            "Ref": "glueworkflowdb61A1F70D"
+          },
+          "--glue_covid_table": "covid_data",
+          "--glue_hiring_table": "hiring_data",
+          "--output_bucket_name": {
+            "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+          },
+          "--output_prefix_path": "/processed-data/"
+        },
+        "Description": "Convert the csv files in S3 to parquet",
+        "ExecutionProperty": {
+          "MaxConcurrentRuns": 1
+        },
+        "GlueVersion": "3.0",
+        "MaxRetries": 2,
+        "Name": "glue-workflow-parquetjob",
+        "NumberOfWorkers": 10,
+        "Timeout": 240,
+        "WorkerType": "G.1X"
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-job-parquet"
+      }
+    },
+    "gluejobredshiftload": {
+      "Type": "AWS::Glue::Job",
+      "Properties": {
+        "Command": {
+          "Name": "glueetl",
+          "PythonVersion": "3",
+          "ScriptLocation": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3Bucket3112DCB2"
+                },
+                "/scripts/redshift-load-etl.py"
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "gluecrawlerroleB13EEB29",
+            "Arn"
+          ]
+        },
+        "Connections": {
+          "Connections": [
+            "redshift-connect"
+          ]
+        },
+        "DefaultArguments": {
+          "--TempDir": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                },
+                "/output/temp/"
+              ]
+            ]
+          },
+          "--job-bookmark-option": "job-bookmark-disable",
+          "--job-language": "python",
+          "--spark-event-logs-path": {
+            "Fn::Join": [
+              "",
+              [
+                "s3://",
+                {
+                  "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+                },
+                "/output/logs/"
+              ]
+            ]
+          },
+          "--enable-metrics": "",
+          "--enable-continuous-cloudwatch-log": "true",
+          "--glue_database_name": {
+            "Ref": "glueworkflowdb61A1F70D"
+          },
+          "--glue_input_file1": "redshift-load-etl.py",
+          "--output_bucket_name": {
+            "Ref": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4"
+          }
+        },
+        "Description": "Use Glue to load output data into Redshift",
+        "ExecutionProperty": {
+          "MaxConcurrentRuns": 1
+        },
+        "GlueVersion": "3.0",
+        "MaxRetries": 2,
+        "Name": "glue-workflow-redshift-load",
+        "NumberOfWorkers": 10,
+        "Timeout": 240,
+        "WorkerType": "G.1X"
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-job-redshift-load"
+      }
+    },
+    "gluetriggerassetJob": {
+      "Type": "AWS::Glue::Trigger",
+      "Properties": {
+        "Actions": [
+          {
+            "JobName": "glue-workflow-assetjob",
+            "Timeout": 120
+          }
+        ],
+        "Type": "ON_DEMAND",
+        "Name": "Run-Job-glue-workflow-assetjob",
+        "WorkflowName": "glue-workflow"
+      },
+      "DependsOn": [
+        "gluejobasset",
+        "rddlpajobmartrawworkflow"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-trigger-assetJob"
+      }
+    },
+    "gluetriggercrawlJob": {
+      "Type": "AWS::Glue::Trigger",
+      "Properties": {
+        "Actions": [
+          {
+            "CrawlerName": "s3-csv-crawler"
+          }
+        ],
+        "Type": "CONDITIONAL",
+        "Name": "Run-Crawler-s3-csv-crawler",
+        "Predicate": {
+          "Conditions": [
+            {
+              "JobName": "glue-workflow-assetjob",
+              "LogicalOperator": "EQUALS",
+              "State": "SUCCEEDED"
+            }
+          ],
+          "Logical": "ANY"
+        },
+        "StartOnCreation": true,
+        "WorkflowName": "glue-workflow"
+      },
+      "DependsOn": [
+        "gluejobasset"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-trigger-crawlJob"
+      }
+    },
+    "gluetriggerparquetJob": {
+      "Type": "AWS::Glue::Trigger",
+      "Properties": {
+        "Actions": [
+          {
+            "JobName": "glue-workflow-parquetjob"
+          }
+        ],
+        "Type": "CONDITIONAL",
+        "Name": "Run-Job-glue-workflow-parquetjob",
+        "Predicate": {
+          "Conditions": [
+            {
+              "CrawlState": "SUCCEEDED",
+              "CrawlerName": "s3-csv-crawler",
+              "LogicalOperator": "EQUALS"
+            }
+          ],
+          "Logical": "ANY"
+        },
+        "StartOnCreation": true,
+        "WorkflowName": "glue-workflow"
+      },
+      "DependsOn": [
+        "gluetriggercrawlJob"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-trigger-parquetJob"
+      }
+    },
+    "gluetriggercrawlJobparquet": {
+      "Type": "AWS::Glue::Trigger",
+      "Properties": {
+        "Actions": [
+          {
+            "CrawlerName": "s3-parquet-crawler"
+          }
+        ],
+        "Type": "CONDITIONAL",
+        "Name": "Run-Crawler-s3-parquet-crawler",
+        "Predicate": {
+          "Conditions": [
+            {
+              "JobName": "glue-workflow-parquetjob",
+              "LogicalOperator": "EQUALS",
+              "State": "SUCCEEDED"
+            }
+          ],
+          "Logical": "ANY"
+        },
+        "StartOnCreation": true,
+        "WorkflowName": "glue-workflow"
+      },
+      "DependsOn": [
+        "gluetriggerparquetJob"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-trigger-crawlJob-parquet"
+      }
+    },
+    "gluetriggerredshiftJob": {
+      "Type": "AWS::Glue::Trigger",
+      "Properties": {
+        "Actions": [
+          {
+            "JobName": "glue-workflow-redshift-load"
+          }
+        ],
+        "Type": "CONDITIONAL",
+        "Name": "Run-Job-glue-workflow-redshift-load",
+        "Predicate": {
+          "Conditions": [
+            {
+              "CrawlState": "SUCCEEDED",
+              "CrawlerName": "s3-parquet-crawler",
+              "LogicalOperator": "EQUALS"
+            }
+          ],
+          "Logical": "ANY"
+        },
+        "StartOnCreation": true,
+        "WorkflowName": "glue-workflow"
+      },
+      "DependsOn": [
+        "gluetriggercrawlJobparquet"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/glue-trigger-redshiftJob"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE02OsW7DMAxEvyW7zEQIgq5t3KlT4BborMiMoFgWAVKKURj690rOkukeCfLuNGh9gsPu3SzS2XHar5YYYf1Oxk7qQwRTReejUz1FSZxtUv0tXgybGROyGlAos8W2feV6PvrkKRbVvFc5dqbZCWyuSo5wznbCdDaCyoVcUz9NMtc21v9X7tksoWZV/CWeboGWxl90bfLD3jnkoryZYR0oPLs0vVDw9m8rvFEpRUUaEe6yf+g3OIDe3cX7jnNMfkYYnvoPLnLW0xcBAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "workflow-stack/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "af-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

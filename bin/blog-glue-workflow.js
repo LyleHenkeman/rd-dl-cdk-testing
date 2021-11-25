@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+"use strict";
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+Object.defineProperty(exports, "__esModule", { value: true });
+require("source-map-support/register");
+const cdk = require("@aws-cdk/core");
+const blog_glue_workflow_stack_1 = require("../lib/blog-glue-workflow-stack");
+const app = new cdk.App();
+const workflow_stack = new blog_glue_workflow_stack_1.BlogGlueWorkFlowStack(app, 'workflow-stack', {
+    stackName: 'workflow-stack',
+    description: 'creates the Glue workflow, Crawlers, Jobs and triggers'
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmxvZy1nbHVlLXdvcmtmbG93LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYmxvZy1nbHVlLXdvcmtmbG93LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUEscUVBQXFFO0FBQ3JFLGlDQUFpQzs7QUFFakMsdUNBQXFDO0FBQ3JDLHFDQUFxQztBQUNyQyw4RUFBd0U7QUFFeEUsTUFBTSxHQUFHLEdBQUcsSUFBSSxHQUFHLENBQUMsR0FBRyxFQUFFLENBQUM7QUFFMUIsTUFBTSxjQUFjLEdBQUcsSUFBSSxnREFBcUIsQ0FBQyxHQUFHLEVBQUUsZ0JBQWdCLEVBQUU7SUFDdEUsU0FBUyxFQUFFLGdCQUFnQjtJQUMzQixXQUFXLEVBQUUsd0RBQXdEO0NBQ3RFLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIiMhL3Vzci9iaW4vZW52IG5vZGVcblxuLy8gQ29weXJpZ2h0IEFtYXpvbi5jb20sIEluYy4gb3IgaXRzIGFmZmlsaWF0ZXMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQuXG4vLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogTUlULTBcblxuaW1wb3J0ICdzb3VyY2UtbWFwLXN1cHBvcnQvcmVnaXN0ZXInO1xuaW1wb3J0ICogYXMgY2RrIGZyb20gJ0Bhd3MtY2RrL2NvcmUnO1xuaW1wb3J0IHsgQmxvZ0dsdWVXb3JrRmxvd1N0YWNrIH0gZnJvbSAnLi4vbGliL2Jsb2ctZ2x1ZS13b3JrZmxvdy1zdGFjayc7XG5cbmNvbnN0IGFwcCA9IG5ldyBjZGsuQXBwKCk7XG5cbmNvbnN0IHdvcmtmbG93X3N0YWNrID0gbmV3IEJsb2dHbHVlV29ya0Zsb3dTdGFjayhhcHAsICd3b3JrZmxvdy1zdGFjaycsIHtcbiAgc3RhY2tOYW1lOiAnd29ya2Zsb3ctc3RhY2snLFxuICBkZXNjcmlwdGlvbjogJ2NyZWF0ZXMgdGhlIEdsdWUgd29ya2Zsb3csIENyYXdsZXJzLCBKb2JzIGFuZCB0cmlnZ2Vycydcbn0pO1xuIl19

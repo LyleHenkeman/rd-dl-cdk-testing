@@ -1,0 +1,807 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "workflow-stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "workflow-stack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/workflow-stack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43.py",
+              "id": "9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43",
+              "packaging": "file",
+              "sourceHash": "9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43",
+              "s3BucketParameter": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4",
+              "s3KeyParameter": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3VersionKey1604AC59",
+              "artifactHashParameter": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43ArtifactHash9FF31A32"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:48:26)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7.py",
+              "id": "9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7",
+              "packaging": "file",
+              "sourceHash": "9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7",
+              "s3BucketParameter": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3BucketFA0A5440",
+              "s3KeyParameter": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3VersionKey2A973290",
+              "artifactHashParameter": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7ArtifactHash38763EDD"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:51:25)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c.py",
+              "id": "b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c",
+              "packaging": "file",
+              "sourceHash": "b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c",
+              "s3BucketParameter": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3Bucket3112DCB2",
+              "s3KeyParameter": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3VersionKey23B74560",
+              "artifactHashParameter": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cArtifactHash433D4A98"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:54:30)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3Bucket667392F4",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:48:26)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43S3VersionKey1604AC59",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:48:26)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters9519cdbca8539f16a7243f18bf01e39cf6ef50f4ae5edec031502deb6499cd43ArtifactHash9FF31A32",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:48:26)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3BucketFA0A5440",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:51:25)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7S3VersionKey2A973290",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:51:25)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters9f0fb0bfba37a502d9cb6820a967c6dbd0727d04fa897fb2ce154b75d5899ea7ArtifactHash38763EDD",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:51:25)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3Bucket3112DCB2",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:54:30)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cS3VersionKey23B74560",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:54:30)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/AssetParameters/b2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2c/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb2baf40e35724bc36c10fd7f5031ee883d96069afa5ded4c10b05223203cef2cArtifactHash433D4A98",
+            "trace": [
+              "new FileAssetParameters (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "BlogGlueWorkFlowStack.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:54:30)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-workflow-db/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "glueworkflowdb61A1F70D",
+            "trace": [
+              "new Database (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-glue/lib/database.ts:77:22)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:62:21)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-crawler-role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecrawlerroleB13EEB29",
+            "trace": [
+              "new Role (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:67:31)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/iam-policy-forAssets/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "iampolicyforAssets6FCB9810",
+            "trace": [
+              "new Policy (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:83:34)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-crawler-s3": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecrawlers3",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:117:29)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-crawler-s3-parquet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluecrawlers3parquet",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:138:37)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/rd-dl-pa-jobmart-raw-workflow": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "rddlpajobmartrawworkflow",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:162:27)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-job-asset": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluejobasset",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:169:28)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-job-parquet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluejobparquet",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:213:30)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-job-redshift-load": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluejobredshiftload",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:248:36)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-trigger-assetJob": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetriggerassetJob",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:294:35)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-trigger-crawlJob": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetriggercrawlJob",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:314:35)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-trigger-parquetJob": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetriggerparquetJob",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:341:37)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-trigger-crawlJob-parquet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetriggercrawlJobparquet",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:368:43)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/glue-trigger-redshiftJob": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gluetriggerredshiftJob",
+            "trace": [
+              "new BlogGlueWorkFlowStack (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/lib/blog-glue-workflow-stack.ts:395:38)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/bin/blog-glue-workflow.ts:12:24)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Module.m._compile (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "main (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1095:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+              "Module.load (node:internal/modules/cjs/loader:975:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/workflow-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (node:events:510:26)",
+              "process.emit (node:events:390:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/workflow-stack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (node:events:510:26)",
+              "process.emit (node:events:390:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/lylehenkeman/workspace/nxp/glue-workflow-aws-cdk/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "workflow-stack"
+    }
+  }
+}
